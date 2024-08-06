@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            /* background-color: green; */
+        }
+
+        p::before {
+            content: "";
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            height: 50px;
+            width: 50px;
+            z-index: 1;
+            background-color: red;
+        }
+
+        p::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 40px;
+            /* z-index: -1; */
+            height: 50px;
+            width: 50px;
+            background-color: green;
+        }
+
+        .flex-container {
+            background-color: antiquewhite;
+            display: flex;
+            height: 300px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .flex-child {
+            /* width: 100px; */
+            height: 100px;
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        .flex-child:nth-child(even) {
+            flex: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>My name is Donald</p>
+
+
+    <div class="flex-container">
+        <div class="flex-child">1</div>
+        <div class="flex-child">2</div>
+        <div class="flex-child">3</div>
+        <div class="flex-child">4</div>
+        <div class="flex-child">5</div>
+        <div class="flex-child">6</div>
+    </div>
+
+    
+</body>
+
+</html>

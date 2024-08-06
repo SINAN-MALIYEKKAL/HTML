@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            scrollbar-width: none;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .navheader {
+            background-color: #1d2935;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* flex-wrap: nowrap; */
+            color: white;
+            /* height: 50px; */
+            padding: 0 5px;
+        }
+
+        .left-nav,
+        .right-nav {
+            display: flex;
+            /* align-items: center; */
+            /* gap: 30px; */
+            height: 55px;
+            /* background: red; */
+
+        }
+
+        .right-nav {
+            text-align: center;
+            gap: 30px;
+        }
+
+
+
+
+
+
+
+        .search {
+            margin-top: 5px;
+            background-color: white;
+            width: fit-content;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            /* gap: 1px; */
+            padding: 1px;
+            height: 32px;
+            width: 150px;
+
+        }
+
+        .logo {
+            fill: #04aa6d;
+            place-content: center;
+            z-index: 1;
+            font-size: 36px;
+        }
+
+        .logo:hover {
+            fill: white;
+
+
+        }
+
+        .srch {
+
+            width: 120px;
+            height: 100%;
+            outline: none;
+            border: none;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+
+
+        }
+
+        .searchbtn {
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            height: 100%;
+            border: none;
+            outline: none;
+            display: grid;
+            place-items: center;
+            width: full;
+            padding: 2px;
+            /* background-color: green; */
+        }
+
+        .pad {
+            /* margin-top: 15px; */
+            display: flex;
+            align-items: center;
+            flex: 1;
+            height: 100;
+            /* width: 100px; */
+            font-size: 15px;
+            letter-spacing: 1px;
+            padding: 0 20px;
+            font-family: sans-serif;
+        }
+
+
+
+        .pad:hover {
+            background-color: green;
+            /* display: block; */
+        }
+
+        .srchdark {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .darkmode {
+            padding-top: 17px;
+            padding-left: 1px;
+
+
+        }
+
+        .all-bal {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 18px;
+
+
+        }
+
+        .bal {
+            /* margin-left: 250px; */
+            align-items: center;
+            padding: 10px;
+            display: flex;
+            height: 20px;
+            width: fit-content;
+            border-radius: 50px;
+
+        }
+
+        .bal:hover {
+            background-color: #0e1115;
+        }
+
+
+
+        .btn {
+            display: flex;
+            background-color: #d9eee1;
+            width: 170px;
+            height: 45px;
+            border-radius: 50px;
+            overflow: hidden;
+            margin-top: 5px;
+
+        }
+
+        .btn1 {
+            background-color: #04aa6d;
+            color: white;
+            width: 70%;
+            height: 45px;
+            border: none;
+            /* margin-right: 250px; */
+            border-radius: 50px;
+        }
+
+        .btn2 {
+            background-color: #d9eee1;
+            border: none;
+            width: 50%;
+
+
+            /* border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px; */
+        }
+
+        .navbar {
+            background-color: hwb(0 4% 93% / 0.942);
+            display: flex;
+            overflow: scroll;
+            position: relative;
+
+        }
+
+        .lessthan {
+            place-content: center;
+            font-size: 20px;
+            background-color: #0e1115;
+            position: fixed;
+            left: 0%;
+
+        }
+
+        .greaterthan {
+            position: fixed;
+            right: 0%;
+            background-color: #0e1115;
+            font-size: 20px;
+        }
+
+        .input {
+            color: white;
+            display: flex;
+            padding: 5px 15px 5px 15px;
+            font-size: 14px;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .input:hover {
+            fill: black;
+        }
+
+        .navfont {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navheader">
+        <section class="left-nav">
+
+            <div class="logo">
+                <svg width="2em" height="1em" viewBox="0 0  24 24">
+                    <path class="logo"
+                        d="M20.228 5.464s.605.648 1.45.648c.666 0 1.151-.403 1.151-.955c0-.677-.619-.989-1.368-.989h-.441l-.264-.595l1.17-1.387c.25-.298.462-.485.462-.485s-.188.01-.567.01h-1.905V.713h3.902v.73L22.253 3.25c.883.125 1.747.754 1.747 1.862c0 1.09-.825 2.098-2.25 2.098c-1.359 0-2.112-.855-2.112-.855l.59-.892zm-7.611 1.348l5.154 9.176l2.543-4.535l-4.866-8.662H9.785L7.438 6.97L5.092 2.79H0l7.41 13.197l.028-.048l.03.048l5.149-9.176zM.053 22.208h.753c0 .22.192.431.533.431c.317 0 .528-.158.528-.37c0-.181-.14-.263-.38-.316l-.431-.11c-.73-.192-.917-.58-.917-.994c0-.504.5-.964 1.205-.964c.576 0 1.228.293 1.219 1.012H1.8c0-.22-.202-.36-.432-.36c-.25 0-.423.144-.423.346c0 .168.159.264.346.307l.518.14c.73.186.86.642.86.94c0 .657-.658 1.017-1.316 1.017c-.638 0-1.286-.388-1.3-1.08zm3.282-.624c0-1.027.826-1.7 1.762-1.7c.561 0 1.017.25 1.315.625l-.567.45a.96.96 0 0 0-.734-.326c-.561 0-.965.404-.965.95c0 .543.404.956.965.956a.96.96 0 0 0 .734-.327l.567.451a1.65 1.65 0 0 1-1.315.624c-.936 0-1.762-.676-1.762-1.703m6.954-.197V23.2h-.806v-1.756c0-.519-.312-.797-.672-.797c-.37 0-.825.216-.825.845v1.713h-.807v-5h.811v2.25c.159-.394.682-.576 1.003-.576c.835.005 1.296.566 1.296 1.507zm.845.197c0-1.027.796-1.7 1.718-1.7s1.727.673 1.727 1.7s-.806 1.703-1.727 1.703c-.922 0-1.718-.676-1.718-1.703m2.634 0c0-.557-.417-.95-.916-.95s-.907.393-.907.95c0 .566.408.955.907.955s.916-.39.916-.955m1.498 0c0-1.027.796-1.7 1.718-1.7s1.727.673 1.727 1.7s-.806 1.703-1.727 1.703c-.917 0-1.718-.676-1.718-1.703m2.634 0c0-.557-.417-.95-.916-.95s-.907.393-.907.95c0 .566.408.955.907.955c.504 0 .916-.39.916-.955m1.704 1.622v-5h.806v5zm1.685-.998h.753c0 .22.192.431.533.431c.316 0 .528-.158.528-.37c0-.181-.14-.263-.38-.316l-.431-.11c-.73-.192-.917-.58-.917-.994c0-.504.499-.964 1.205-.964c.575 0 1.228.293 1.219 1.012h-.768c0-.22-.202-.36-.432-.36c-.25 0-.423.144-.423.346c0 .168.159.264.346.307l.518.14c.73.186.86.642.86.94c0 .657-.658 1.017-1.316 1.017c-.638 0-1.281-.388-1.295-1.08z" />
+                </svg>
+            </div>
+            <div class="pad"> Tutorials</div>
+            <div class="pad"> Exercises</div>
+            <div class="pad">Certificates</div>
+            <div class="pad">Services</div>
+            <div class="srchdark">
+                <div class=" search">
+                    <input class="srch" type="text" placeholder="  Search...">
+
+                    <div class="searchbtn"><svg width="1em" height="1em" viewBox="0 0 16 16">
+                            <path fill="black"
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0" />
+                        </svg>
+
+                    </div>
+                </div>
+                <div class="darkmode"><svg width="2em" height="2em" viewBox=" 0 24 24">
+                        <path fill="white"
+                            d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12s4.477 10 10 10m0-2V4a8 8 0 1 1 0 16" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="right-nav">
+            <div class="all-bal">
+
+                <div class="bal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 25 25">
+                        <path fill="#9763F6"
+                            d="M21.738 16.13a1 1 0 0 1-.19.61a1 1 0 0 1-.52.38l-1.71.57a3.57 3.57 0 0 0-1.4.86a3.5 3.5 0 0 0-.86 1.4l-.6 1.7a1 1 0 0 1-.36.51a1.08 1.08 0 0 1-.62.19a1 1 0 0 1-1-.71l-.57-1.71a3.5 3.5 0 0 0-.86-1.4a3.789 3.789 0 0 0-1.4-.87l-1.71-.56a1.11 1.11 0 0 1-.51-.37a1.08 1.08 0 0 1-.21-.62a1 1 0 0 1 .71-1l1.72-.57a3.54 3.54 0 0 0 2.28-2.28l.57-1.69a1 1 0 0 1 .95-.73c.215 0 .426.059.61.17c.182.125.322.303.4.51l.58 1.74a3.54 3.54 0 0 0 2.28 2.28l1.7.6a1 1 0 0 1 .51.38a1 1 0 0 1 .21.61m-9.999-6.36a1 1 0 0 1-.17.55a1 1 0 0 1-.47.35l-1.26.42c-.353.122-.673.32-.94.58a2.48 2.48 0 0 0-.58.94l-.43 1.24a.89.89 0 0 1-.35.47a1 1 0 0 1-.56.18a1 1 0 0 1-.57-.19a1 1 0 0 1-.34-.47l-.41-1.25a2.44 2.44 0 0 0-.58-.93a2.22 2.22 0 0 0-.93-.58l-1.25-.42a.93.93 0 0 1-.48-.35a1 1 0 0 1 .48-1.47l1.25-.41a2.49 2.49 0 0 0 1.53-1.53l.41-1.23a1 1 0 0 1 .32-.47a1 1 0 0 1 .55-.2a1 1 0 0 1 .57.16a1 1 0 0 1 .37.46l.42 1.28a2.49 2.49 0 0 0 1.53 1.53l1.25.43a.92.92 0 0 1 .46.35a.94.94 0 0 1 .18.56m5.789-5.36a1 1 0 0 1-.17.51a.82.82 0 0 1-.42.3l-.62.21a.84.84 0 0 0-.52.52l-.22.63a.929.929 0 0 1-.29.39a.82.82 0 0 1-.52.18a1.08 1.08 0 0 1-.49-.15a.92.92 0 0 1-.32-.44l-.21-.62a.719.719 0 0 0-.2-.32a.76.76 0 0 0-.32-.2l-.62-.2a1 1 0 0 1-.42-.31a.88.88 0 0 1-.16-.51a.94.94 0 0 1 .17-.51a.88.88 0 0 1 .42-.3l.61-.2a.91.91 0 0 0 .33-.2a.939.939 0 0 0 .2-.33l.21-.62c.06-.155.155-.292.28-.4a1 1 0 0 1 .49-.19a.94.94 0 0 1 .53.16a1 1 0 0 1 .32.41l.21.64a.942.942 0 0 0 .2.33a1 1 0 0 0 .32.2l.63.21a1 1 0 0 1 .41.3a.87.87 0 0 1 .17.51" />
+                    </svg>
+                    <div>Plus</div>
+                </div>
+                <div class="bal"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+                        <path fill="#9763F6"
+                            d="M160 389a20.9 20.9 0 0 1-13.82-5.2l-128-112a21 21 0 0 1 0-31.6l128-112a21 21 0 0 1 27.66 31.61L63.89 256l109.94 96.19A21 21 0 0 1 160 389m192 0a21 21 0 0 1-13.84-36.81L448.11 256l-109.94-96.19a21 21 0 0 1 27.66-31.61l128 112a21 21 0 0 1 0 31.6l-128 112A20.9 20.9 0 0 1 352 389m-144 48a21 21 0 0 1-20.12-27l96-320a21 21 0 1 1 40.23 12l-96 320A21 21 0 0 1 208 437" />
+                    </svg>
+                    <div>Spaces</div>
+                </div>
+                <div class="bal"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="#9763F6"
+                            d="M8.5 19a1.5 1.5 0 1 0 1.5 1.5A1.5 1.5 0 0 0 8.5 19M19 16H7a1 1 0 0 1 0-2h8.491a3.013 3.013 0 0 0 2.885-2.176l1.585-5.55A1 1 0 0 0 19 5H6.74a3.007 3.007 0 0 0-2.82-2H3a1 1 0 0 0 0 2h.921a1.005 1.005 0 0 1 .962.725l.155.545v.005l1.641 5.742A3 3 0 0 0 7 18h12a1 1 0 0 0 0-2m-1.326-9l-1.22 4.274a1.005 1.005 0 0 1-.963.726H8.754l-.255-.892L7.326 7ZM16.5 19a1.5 1.5 0 1 0 1.5 1.5a1.5 1.5 0 0 0-1.5-1.5" />
+                    </svg>
+                    <div>Get Certified</div>
+
+                </div>
+            </div>
+            <div class="btn">
+                <button class="btn1">Sign up</button>
+                <button class="btn2">Log in</button>
+            </div>
+        </section>
+
+    </header>
+    <div class="navbar">
+        <section class="navfont">
+
+            <div class="input">HTML</div>
+            <div class="input">CSS</div>
+            <div class="input">JAVASCRIPT</div>
+            <div class="input">SQL</div>
+            <div class="input">PYTHON</div>
+            <div class="input">JAVA</div>
+            <div class="input">PHP</div>
+            <div class="input">HOWTO</div>
+            <div class="input">W3.CSS</div>
+            <div class="input">C</div>
+            <div class="input">C++</div>
+            <div class="input">C#</div>
+            <div class="input">BOOTSTRAP</div>
+            <div class="input">REACT</div>
+            <div class="input">MYSQL</div>
+            <div class="input">JQUERY</div>
+            <div class="input">EXCEL</div>
+            <div class="input">XML</div>
+            <div class="input">JANGO</div>
+            <div class="input">NUMPY</div>
+            <div class="input">PANPAY</div>
+            <div class="input">NODEJS</div>
+            <div class="input">TYPESCRIPT</div>
+            <div class="input">ANGULAR</div>
+            <div class="input">GIT</div>
+            <div class="input">POSTGRESQL</div>
+            <div class="input">MONGODB</div>
+            <div class="input">AI</div>
+            <div class="input">GO</div>
+            <div class="input">KOTIN</div>
+            <div class="input">SASS</div>
+            <div class="input">VUE</div>
+            <div class="input">DSA</div>
+            <div class="input">GENAI</div>
+            <div class="input">SCIPY</div>
+            <div class="input">AWS</div>
+            <div class="input">CYBERSECURITY</div>
+            <div class="input">DATASEINCE</div>
+        </section>
+
+
+        <div class="lessthan"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="white" fill-rule="evenodd" d="M17.5 17.5L9.25 12l8.25-5.5l-1-1.5L6 12l10.5 7z" />
+            </svg></div>
+        <div class="greaterthan"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <path fill="white" fill-rule="evenodd" d="m6.5 17.5l8.25-5.5L6.5 6.5l1-1.5L18 12L7.5 19z" />
+            </svg></div>
+
+
+    </div>
+</body>
+
+</html>
